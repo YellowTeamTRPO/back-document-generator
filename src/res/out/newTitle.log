@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.11)  12 DEC 2021 13:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.11)  12 DEC 2021 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,13 +497,8 @@ tex.def
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count273
 \l__pdf_internal_box=\box54
-) (newTitle.aux
-LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 6
-.
-
-(C:\Users\kokno\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmr.fd
-File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))
+)
+No file newTitle.aux.
 \openout1 = `newTitle.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -521,6 +516,11 @@ LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 8.
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 8
+.
+(C:\Users\kokno\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Info: Redefining \th on input line 8.
 
@@ -604,9 +604,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/kokno/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 (newTitle.aux) ) 
 Here is how much of TeX's memory you used:
- 7677 strings out of 478659
- 145897 string characters out of 2845919
- 562201 words of memory out of 3000000
+ 7675 strings out of 478659
+ 145840 string characters out of 2845919
+ 562210 words of memory out of 3000000
  25683 multiletter control sequences out of 15000+600000
  410501 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -615,7 +615,7 @@ Here is how much of TeX's memory you used:
 /dpi600\larm1200.pk> <C:\Users\kokno\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
 -t2a/dpi600\labx1440.pk> <C:\Users\kokno\AppData\Local\MiKTeX\fonts/pk/ljfour/l
 h/lh-t2a/dpi600\larm1440.pk>
-Output written on newTitle.pdf (1 page, 27307 bytes).
+Output written on newTitle.pdf (1 page, 27351 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -27,14 +27,13 @@ public class GenerateTex {
     }
 
     private static void writeOutputFile(String text, String fileName){
-        fileName = "newTitle.tex"; // Думаю файл должен называться именем и фамилией человека
         Path path = Paths.get("src/res/out/" + fileName);
         byte[] data = text.getBytes();
         try (OutputStream out = new BufferedOutputStream(
                 Files.newOutputStream(path, CREATE, TRUNCATE_EXISTING))) {
             out.write(data, 0, data.length);
-        } catch (IOException x) {
-            System.err.println(x);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -44,16 +43,18 @@ public class GenerateTex {
         String text = "";
         if (strArr.length > 1) {
             text = switch (strArr[1]) {
-                case "Институт" -> "strArr[0]";
-                case "Высшая школа" -> "strArr[0]";
-                case "Вид работы" -> "strArr[0]";
-                case "Дисцплина" -> "strArr[0]";
-                case "Тема" -> false? "%" + strArr[0] : "strArr[0]";
-                case "Вариант" -> false? "%" + strArr[0] : "strArr[0]";
-                case "Студент" ->  "strArr[0]";
-                case "Группа" -> "strArr[0]";
-                case "Преподаватель" -> "strArr[0]";
-                case "Год" -> "strArr[0]";
+                case "Институт" -> "Институт";
+                case "Высшая школа" -> "Высшая школа";
+                case "Вид работы" -> "Вид работы";
+                case "Дисцплина" -> "Дисцплина";
+                case "Тема есть?" -> true? strArr[0] : "%" + strArr[0]; // Условие если тема есть, то добавляем тему, иначе комментим строку
+                case "Тема" -> true? "Название темы" : "%" + strArr[0]; // То же условие, если есть вставляем название темы
+                case "Вариант есть?" -> true? strArr[0] : "%" + strArr[0]; // Аналогично с темой
+                case "Вариант" -> true? "Номер варианта" : "%" + strArr[0];
+                case "Студент" ->  "Студент";
+                case "Группа" -> "Группа";
+                case "Преподаватель" -> "Преподаватель";
+                case "Год" -> "Год";
                 default -> strArr[0];
             };
             return text + " % " + strArr[1];
@@ -66,8 +67,11 @@ public class GenerateTex {
 
     private static void toPdf(String fileName) {
         try {
+            String name = fileName.split(".tex")[0];
+            File file = new File("/src/res/out/" + name);
+            file.delete();
             ProcessBuilder pb = new ProcessBuilder(
-                    "pdflatex", dirPath + "/src/res/out/newTitle.tex")
+                    "pdflatex", dirPath + "/src/res/out/" + fileName)
                     .inheritIO()
                     .directory(new File(dirPath + "/src/res/out"));
             Process process = pb.start();
@@ -83,9 +87,10 @@ public class GenerateTex {
     public static void main(String[] args)
     {
         try {
+            String fileName = "newTitle.tex"; // Думаю файл должен называться именем и фамилией человека
             String text = readFromInputFile();
-            writeOutputFile(text, "");
-            toPdf("");
+            writeOutputFile(text, fileName);
+            toPdf(fileName);
 
         } catch (IOException e) {
             e.printStackTrace();
